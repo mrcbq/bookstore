@@ -4,16 +4,13 @@ import './Navbar.css';
 export default function Navbar() {
   return (
     <div id="navbarContainer">
-      <h1>Math Magicians</h1>
+      <h1>Bookstore</h1>
       <ul>
         <li>
-          <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/home">Home</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/">Books</NavLink>
         </li>
         <li>
-          <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/">Calculator</NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/quotes">Quotes</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/categories">Categories</NavLink>
         </li>
       </ul>
     </div>

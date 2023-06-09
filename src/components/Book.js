@@ -1,5 +1,4 @@
 import { PropTypes } from 'prop-types';
-import {} from 'defa';
 
 export default function Book({
   gender,
@@ -60,9 +59,9 @@ Book.propTypes = {
   gender: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
-  progress: PropTypes.string,
+  progress: PropTypes.number,
   handleDelete: PropTypes.func,
-  currentChapter: PropTypes.string,
+  currentChapter: PropTypes.number,
   id: PropTypes.string,
 };
 

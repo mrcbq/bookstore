@@ -9,13 +9,13 @@ function BookList() {
       id: uuidv4(),
       title: 'Book 1',
       author: 'Author 1',
-      progress: '60',
+      progress: 60,
     },
     {
       id: uuidv4(),
       title: 'Book 2',
       author: 'Author 2',
-      progress: '76',
+      progress: 80,
     },
   ]);
   const [title, setTitle] = useState('');
@@ -28,19 +28,26 @@ function BookList() {
   };
 
   const handleTitleChange = (e) => {
-    setTitle(e.target.value);
+    if (e.target.value.trim() !== '') {
+      setTitle(e.target.value);
+    }
   };
 
   const handleAuthorChange = (e) => {
-    setAuthor(e.target.value);
+    if (e.target.value.trim() !== '') {
+      setAuthor(e.target.value);
+    }
   };
 
   const handleAddBook = (e) => {
     e.preventDefault();
+    // if (title.trim() === '' || author.trim() === '') {
+    //   return;
+    // }
     const newBook = {
       id: uuidv4(),
-      title,
-      author,
+      ...(title && { title }),
+      ...(author && { author }),
       progress: Math.random() * 100,
     };
     setBooks([...books, newBook]);
