@@ -1,9 +1,12 @@
+import { PropTypes } from 'prop-types';
+import {} from 'defa';
+
 export default function Book({
   gender,
   title,
   author,
   progress,
-  current_chapter,
+  currentChapter,
   handleDelete,
   id,
 }) {
@@ -14,37 +17,61 @@ export default function Book({
         <h2 className="title">{title}</h2>
         <p className="author">{author}</p>
         <div className="actions">
-          <button className="action">Comments</button>
+          <button type="button" className="action">
+            Comments
+          </button>
           <div className="vertical-separator">|</div>
-          <button className="action" type="button" onClick={() => handleDelete(id)}>Remove</button>
+          <button
+            className="action"
+            type="button"
+            onClick={() => handleDelete(id)}
+          >
+            Remove
+          </button>
           <div className="vertical-separator">|</div>
-          <button className="action">Edit</button>
+          <button className="action" type="button">
+            Edit
+          </button>
         </div>
       </div>
       <div>
         <div>
-          <div className="img-progress"></div>
+          <div className="img-progress" />
           <div>
-            <div>{progress}%</div>
+            <div>
+              {progress}
+              %
+            </div>
             <p>Completed</p>
           </div>
         </div>
         <div className="vertical-separator">|</div>
         <div>
           <p>CURRENT CHAPTER</p>
-          <p>{current_chapter}</p>
-          <button>UPDATE PROGRESS</button>
+          <p>{currentChapter}</p>
+          <button type="button">UPDATE PROGRESS</button>
         </div>
       </div>
     </div>
   );
 }
 
+Book.propTypes = {
+  gender: PropTypes.string,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  progress: PropTypes.string,
+  handleDelete: PropTypes.func,
+  currentChapter: PropTypes.string,
+  id: PropTypes.string,
+};
 
-Book.PropTypes = {
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  progress: PropTypes.string.isRequired,
-  handleDelete: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
+Book.defaultProps = {
+  gender: 'Action',
+  title: 'One Hundred Years of Solitude',
+  author: 'Gabriel Garcia Marquez',
+  progress: '50',
+  handleDelete: () => {},
+  currentChapter: 1,
+  id: 1,
 };
