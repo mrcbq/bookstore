@@ -1,31 +1,21 @@
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { useSelector } from 'react-redux';
+// import { v4 as uuidv4 } from 'uuid';
+
 import Book from './Book';
 import AddForm from './AddForm';
 
 function BookList() {
-  const [books, setBooks] = useState([
-    {
-      id: uuidv4(),
-      title: 'Book 1',
-      author: 'Author 1',
-      progress: 60,
-    },
-    {
-      id: uuidv4(),
-      title: 'Book 2',
-      author: 'Author 2',
-      progress: 80,
-    },
-  ]);
+  const books = useSelector((state) => state.books);
+  console.log(books);
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
-  const handleDelete = (id) => {
-    const newBooks = books.filter((book) => book.id !== id);
-    setBooks(newBooks);
-    return books;
-  };
+  // const handleDelete = (id) => {
+  //   // const newBooks = books.filter((book) => book.id !== id);
+  //   // setBooks(newBooks);
+  //   return books;
+  // };
 
   const handleTitleChange = (e) => {
     if (e.target.value.trim() !== '') {
@@ -44,13 +34,13 @@ function BookList() {
     // if (title.trim() === '' || author.trim() === '') {
     //   return;
     // }
-    const newBook = {
+    /* const newBook = {
       id: uuidv4(),
       ...(title && { title }),
       ...(author && { author }),
       progress: Math.random() * 100,
-    };
-    setBooks([...books, newBook]);
+    }; */
+    // setBooks([...books, newBook]);
     setTitle('');
     setAuthor('');
   };
@@ -65,7 +55,7 @@ function BookList() {
             title={book.title}
             author={book.author}
             progress={book.progress}
-            handleDelete={handleDelete}
+            // handleDelete={handleDelete}
           />
         ))}
       </div>
