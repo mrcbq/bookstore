@@ -1,20 +1,21 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import { v4 as uuidv4 } from 'uuid';
 
 import Book from './Book';
 import AddForm from './AddForm';
+import { deleteBook } from '../redux/books/booksSlice';
 
 function BookList() {
   const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+
+  const handleDelete = (id) => {
+    dispatch(deleteBook(id));
+  };
+
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-
-  // const handleDelete = (id) => {
-  //   // const newBooks = books.filter((book) => book.id !== id);
-  //   // setBooks(newBooks);
-  //   return books;
-  // };
 
   const handleTitleChange = (e) => {
     if (e.target.value.trim() !== '') {
@@ -54,7 +55,7 @@ function BookList() {
             title={book.title}
             author={book.author}
             progress={book.category}
-            // handleDelete={handleDelete}
+            handleDelete={handleDelete}
           />
         ))}
       </div>
