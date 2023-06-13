@@ -7,7 +7,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Bookstore](#-capstone-rick-and-morty)
+- [📖 Bookstore](#-BookStore)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -41,9 +41,8 @@ The Bookstore is a website similar to the "Awesome Books" website. I create an s
 - HTML
 - JS
 - CSS
-- Webpack
 - React
-- Redux
+- Redux Toolkit (RTK)
 
 <details>
   <summary>Client</summary>
@@ -75,10 +74,8 @@ The Bookstore is a website similar to the "Awesome Books" website. I create an s
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-Coming soon...
-<!-- > You can see the live demo of this project [here](https://mrcbq.github.io/bookstore/) -->
+> You can see the live demo of this project [here](https://mrcbq.github.io/bookstore/)
 
-<!-- - No live demo available yet -->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->

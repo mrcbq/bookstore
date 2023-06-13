@@ -1,58 +1,33 @@
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { useDispatch, useSelector } from 'react-redux';
+import { v4 as uuid } from 'uuid';
+
 import Book from './Book';
 import AddForm from './AddForm';
+import { addBook, deleteBook } from '../redux/books/booksSlice';
 
 function BookList() {
-  const [books, setBooks] = useState([
-    {
-      id: uuidv4(),
-      title: 'Book 1',
-      author: 'Author 1',
-      progress: 60,
-    },
-    {
-      id: uuidv4(),
-      title: 'Book 2',
-      author: 'Author 2',
-      progress: 80,
-    },
-  ]);
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
 
   const handleDelete = (id) => {
-    const newBooks = books.filter((book) => book.id !== id);
-    setBooks(newBooks);
-    return books;
+    dispatch(deleteBook(id));
   };
 
-  const handleTitleChange = (e) => {
-    if (e.target.value.trim() !== '') {
-      setTitle(e.target.value);
-    }
-  };
+  const [book, setBook] = useState('');
 
-  const handleAuthorChange = (e) => {
-    if (e.target.value.trim() !== '') {
-      setAuthor(e.target.value);
-    }
+  const handleChange = (e) => {
+    setBook({ ...book, [e.target.name]: e.target.value });
   };
 
   const handleAddBook = (e) => {
     e.preventDefault();
-    // if (title.trim() === '' || author.trim() === '') {
-    //   return;
-    // }
-    const newBook = {
-      id: uuidv4(),
-      ...(title && { title }),
-      ...(author && { author }),
-      progress: Math.random() * 100,
-    };
-    setBooks([...books, newBook]);
-    setTitle('');
-    setAuthor('');
+    dispatch(addBook({ ...book, item_id: uuid() }));
+    setBook({
+      title: '',
+      author: '',
+      category: '',
+    });
   };
 
   return (
@@ -60,21 +35,19 @@ function BookList() {
       <div className="books-container">
         {books.map((book) => (
           <Book
-            key={book.id}
-            id={book.id}
+            key={book.item_id}
+            id={book.item_id}
             title={book.title}
             author={book.author}
-            progress={book.progress}
+            progress={book.category}
             handleDelete={handleDelete}
           />
         ))}
       </div>
       <AddForm
         handleAdd={handleAddBook}
-        handleTitle={handleTitleChange}
-        handleAuthor={handleAuthorChange}
-        title={title}
-        author={author}
+        handleTitle={handleChange}
+        handleAuthor={handleChange}
       />
     </section>
   );
