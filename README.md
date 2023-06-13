@@ -75,7 +75,8 @@ The Bookstore is a website similar to the "Awesome Books" website. I create an s
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> You can see the live demo of this project [here](https://mrcbq.github.io/bookstore/)
+Coming soon...
+<!-- > You can see the live demo of this project [here](https://mrcbq.github.io/bookstore/) -->
 
 <!-- - No live demo available yet -->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
