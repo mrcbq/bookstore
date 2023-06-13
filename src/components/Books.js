@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 import Book from './Book';
 import AddForm from './AddForm';
-import { deleteBook } from '../redux/books/booksSlice';
+import { addBook, deleteBook } from '../redux/books/booksSlice';
 
 function BookList() {
   const books = useSelector((state) => state.books);
@@ -14,35 +14,17 @@ function BookList() {
     dispatch(deleteBook(id));
   };
 
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [book, setBook] = useState('');
 
-  const handleTitleChange = (e) => {
+  const handleChange = (e) => {
     if (e.target.value.trim() !== '') {
-      setTitle(e.target.value);
-    }
-  };
-
-  const handleAuthorChange = (e) => {
-    if (e.target.value.trim() !== '') {
-      setAuthor(e.target.value);
+      setBook({ ...book, [e.target.name]: e.target.value });
     }
   };
 
   const handleAddBook = (e) => {
     e.preventDefault();
-    // if (title.trim() === '' || author.trim() === '') {
-    //   return;
-    // }
-    /* const newBook = {
-      id: uuidv4(),
-      ...(title && { title }),
-      ...(author && { author }),
-      progress: Math.random() * 100,
-    }; */
-    // setBooks([...books, newBook]);
-    setTitle('');
-    setAuthor('');
+    dispatch(addBook({ ...book, item_id: uuid() }));
   };
 
   return (
@@ -61,10 +43,8 @@ function BookList() {
       </div>
       <AddForm
         handleAdd={handleAddBook}
-        handleTitle={handleTitleChange}
-        handleAuthor={handleAuthorChange}
-        title={title}
-        author={author}
+        handleTitle={handleChange}
+        handleAuthor={handleChange}
       />
     </section>
   );

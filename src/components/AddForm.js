@@ -8,6 +8,7 @@ const AddForm = ({
       Title
       <input
         type="text"
+        name="title"
         id="bookTitle"
         placeholder="Title"
         value={title}
@@ -19,6 +20,7 @@ const AddForm = ({
       Author
       <input
         type="text"
+        name="author"
         id="bookAuthor"
         placeholder="Author"
         value={author}
@@ -36,6 +38,11 @@ AddForm.propTypes = {
   handleAdd: PropTypes.func.isRequired,
   handleTitle: PropTypes.func.isRequired,
   handleAuthor: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  author: PropTypes.string,
+};
+
+AddForm.defaultProps = {
+  title: '',
+  author: '',
 };
