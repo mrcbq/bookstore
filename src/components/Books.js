@@ -7,7 +7,6 @@ import AddForm from './AddForm';
 
 function BookList() {
   const books = useSelector((state) => state.books);
-  console.log(books);
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
@@ -50,11 +49,11 @@ function BookList() {
       <div className="books-container">
         {books.map((book) => (
           <Book
-            key={book.id}
-            id={book.id}
+            key={book.item_id}
+            id={book.item_id}
             title={book.title}
             author={book.author}
-            progress={book.progress}
+            progress={book.category}
             // handleDelete={handleDelete}
           />
         ))}

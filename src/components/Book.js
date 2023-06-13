@@ -59,7 +59,7 @@ Book.propTypes = {
   gender: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
-  progress: PropTypes.number,
+  progress: PropTypes.string,
   handleDelete: PropTypes.func,
   currentChapter: PropTypes.number,
   id: PropTypes.string,
