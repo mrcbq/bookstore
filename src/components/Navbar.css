@@ -1,0 +1,16 @@
+#navbarContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.active {
+  color: rgb(59, 51, 51);
+}
