@@ -30,7 +30,6 @@ const userSlice = createSlice({
     },
     deleteBook: (state, action) => {
       const foundBook = state.find((book) => book.item_id === action.payload);
-      console.log(state);
       if (foundBook) {
         state.splice(state.indexOf(foundBook), 1);
       }
