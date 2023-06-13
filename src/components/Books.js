@@ -17,14 +17,17 @@ function BookList() {
   const [book, setBook] = useState('');
 
   const handleChange = (e) => {
-    if (e.target.value.trim() !== '') {
-      setBook({ ...book, [e.target.name]: e.target.value });
-    }
+    setBook({ ...book, [e.target.name]: e.target.value });
   };
 
   const handleAddBook = (e) => {
     e.preventDefault();
     dispatch(addBook({ ...book, item_id: uuid() }));
+    setBook({
+      title: '',
+      author: '',
+      category: '',
+    });
   };
 
   return (

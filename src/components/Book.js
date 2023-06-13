@@ -1,5 +1,7 @@
 import { PropTypes } from 'prop-types';
 
+import Button from './Button';
+
 export default function Book({
   gender,
   title,
@@ -20,13 +22,7 @@ export default function Book({
             Comments
           </button>
           <div className="vertical-separator">|</div>
-          <button
-            className="action"
-            type="button"
-            onClick={() => handleDelete(id)}
-          >
-            Remove
-          </button>
+          <Button onClick={() => handleDelete(id)} text="Remove" />
           <div className="vertical-separator">|</div>
           <button className="action" type="button">
             Edit
@@ -66,10 +62,10 @@ Book.propTypes = {
 };
 
 Book.defaultProps = {
-  gender: 'Action',
-  title: 'One Hundred Years of Solitude',
-  author: 'Gabriel Garcia Marquez',
-  progress: '50',
+  gender: '',
+  title: '',
+  author: '',
+  progress: '',
   handleDelete: () => {},
   currentChapter: 1,
   id: 1,
