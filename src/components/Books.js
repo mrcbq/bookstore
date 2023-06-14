@@ -8,7 +8,6 @@ import { fetchBooks, addBook, deleteBook } from '../redux/books/booksSlice';
 
 function BookList() {
   const books = useSelector((state) => state.books.books);
-  // console.log('Books:', books);
   const dispatch = useDispatch();
 
   useEffect(() => {
