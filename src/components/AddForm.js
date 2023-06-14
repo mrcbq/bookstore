@@ -13,7 +13,6 @@ const AddForm = ({
         name="title"
         id="bookTitle"
         placeholder="Title"
-        // value={title}
         onChange={handleTitle}
       />
     </label>
@@ -25,7 +24,6 @@ const AddForm = ({
         name="author"
         id="bookAuthor"
         placeholder="Author"
-        // value={author}
         onChange={handleAuthor}
       />
     </label>
@@ -40,6 +38,4 @@ AddForm.propTypes = {
   handleAdd: PropTypes.func.isRequired,
   handleTitle: PropTypes.func.isRequired,
   handleAuthor: PropTypes.func.isRequired,
-  // title: PropTypes.string.isRequired,
-  // author: PropTypes.string.isRequired,
 };

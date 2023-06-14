@@ -15,7 +15,6 @@ function App() {
           basename="/https://mrcbq.github.io/bookstore/"
         />
         <Route path="/categories" element={<Categories />} />
-        {/* <Route path="*" element={<NotFoundPage />} /> */}
       </Routes>
     </HashRouter>
   );
