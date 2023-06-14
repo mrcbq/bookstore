@@ -30,14 +30,23 @@ const booksSlice = createSlice({
     });
     builder.addCase(fetchBooks.fulfilled, (state, action) => {
       state.status = 'succeeded';
-      state.books = action.payload;
+      state.books = Object.entries(action.payload).map(
+        ([itemId, itemData]) => ({
+          item_id: itemId,
+          ...itemData[0],
+        }),
+      );
     });
     builder.addCase(fetchBooks.rejected, (state, action) => {
       state.status = 'failed';
       state.error = action.error.message;
     });
     builder.addCase(addBook.fulfilled, (state, action) => {
-      state.books.push(action.payload);
+      const newItem = {
+        item_id: Object.keys(action.payload)[0],
+        ...Object.values(action.payload)[0][0],
+      };
+      state.books.push(newItem);
     });
     builder.addCase(deleteBook.fulfilled, (state, action) => {
       state.books = state.books.filter(
