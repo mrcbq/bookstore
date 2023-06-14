@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { v4 as uuid } from 'uuid';
+
 import bookstoreAPI from '../bookstoreAPI';
 
 const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
@@ -31,6 +33,7 @@ const booksSlice = createSlice({
     builder.addCase(fetchBooks.pending, (state) => {
       state.status = 'loading';
     });
+
     builder.addCase(fetchBooks.fulfilled, (state, action) => {
       state.status = 'succeeded';
       state.books = Object.entries(action.payload).map(
@@ -40,27 +43,23 @@ const booksSlice = createSlice({
         }),
       );
     });
+
     builder.addCase(fetchBooks.rejected, (state, action) => {
       state.status = 'failed';
       state.error = action.error.message;
     });
+
     builder.addCase(deleteBook.fulfilled, (state, action) => {
-      state.books = state.books.filter(
-        (book) => book.item_id !== action.payload,
-      );
+      state.books = state.books.filter((book) => book.item_id !== action.payload);
     });
+
     builder.addCase(addBook.fulfilled, (state, action) => {
       state.status = 'succeeded';
-      if (action.payload) {
-        state.books = Object.entries(action.payload).map(
-          ([itemId, itemData]) => ({
-            item_id: itemId,
-            ...itemData[0],
-          }),
-        );
-      } else {
-        state.books = [];
-      }
+      const book = {
+        item_id: uuid(),
+        ...action.meta.arg,
+      };
+      state.books = [...state.books, book];
     });
   },
 });
