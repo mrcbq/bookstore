@@ -1,12 +1,14 @@
 .addBookForm {
   padding: 1rem 6.25rem;
 }
+
 .horizontal-divider {
   height: 0.125rem;
   background-color: #e8e8e8;
   width: 100%;
   margin: 2.5rem 0 1.813rem;
 }
+
 .add-form {
   display: grid;
   grid-template-columns: 2fr 1fr 0.5fr;
@@ -15,16 +17,19 @@
   margin-top: 20px;
   gap: 32px;
 }
+
 .form-title,
 input {
   font-family: "Montserrat", sans-serif;
 }
+
 .form-title {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.18px;
   color: #888;
 }
+
 input {
   width: 100%;
   padding: 12px;
@@ -32,9 +37,11 @@ input {
   border: 1px solid #e8e8e8;
   background-color: #fff;
 }
+
 input::placeholder {
   color: #c4c4c4;
 }
+
 .primary-button-big {
   cursor: pointer;
   padding: 12px;

@@ -54,7 +54,6 @@ function BookList() {
             gender={book.category}
             title={book.title}
             author={book.author}
-            // progress={book.progress}
             handleDelete={handleDelete}
           />
         ))}

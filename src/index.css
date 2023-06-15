@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
   --bubble-gum-pink: #ff5ab7;
   --black: #1e1e1e;
   --pinkish-grey: #c7c7c7;
@@ -35,7 +36,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 9.313rem 6.25rem;
   background-color: var(--pale-grey);
+
   /* width: 90%; */
+
   /* width: 100rem; */
+
   /* height: 89.625rem; */
 }
