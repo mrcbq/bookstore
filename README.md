@@ -150,7 +150,8 @@ To run tests, run the following command:
 
 ## Walkthrough <a name="walkthrough"></a>
 
-You can watch the video description of the project [here](https://---).
+In this project, we will be copying a given web design using React, Redux, and API handling. The design will serve as a reference for implementing the user interface and interactions.
+Please see the above sections if you want to copy and setup this project on your pc.
 
 <!-- CONTRIBUTING -->
 

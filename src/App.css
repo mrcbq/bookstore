@@ -1,15 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 #root {
   display: flex;
   flex-direction: column;
-  margin: 5% 10%;
-
-  /* align-items: center; */
-
-  /* grid-template-columns: 1fr 1fr; */
+  background-color: var(--white-two);
+  border-radius: 4px;
+  min-height: 100vh;
+  box-shadow: 0 0 60px 0 var(--black-5);
+  gap: 2.3rem;
 }
