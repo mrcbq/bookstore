@@ -14,6 +14,7 @@
   flex-direction: row;
   align-items: center;
 }
+
 ul {
   list-style: none;
   display: flex;
@@ -22,10 +23,10 @@ ul {
 }
 
 a {
-  font-family: "Montserrat",sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.813rem;
   letter-spacing: 1.9px;
-  opacity: .5;
+  opacity: 0.5;
   color: #121212;
   text-decoration: none;
 }
@@ -33,11 +34,12 @@ a {
 .active {
   opacity: 1;
 }
+
 .Bookstore-CMS {
   width: 15rem;
   height: 2.313rem;
   margin: 0.375rem 2.938rem 0.125rem 0;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.875rem;
   font-weight: bold;
   font-stretch: normal;
@@ -46,6 +48,7 @@ a {
   letter-spacing: normal;
   color: var(--azure);
 }
+
 .icon-button {
   cursor: pointer;
   width: 2.813rem;
@@ -54,6 +57,7 @@ a {
   border: 1px solid #e8e8e8;
   background-color: #fff;
 }
+
 .primary-color {
   color: #0290ff;
 }
