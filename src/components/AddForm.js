@@ -16,7 +16,6 @@ const AddForm = ({ handleAdd, handleTitle, handleAuthor }) => (
           onChange={handleTitle}
         />
       </label>
-      <br />
       <label htmlFor="bookAuthor">
         <input
           type="text"
@@ -26,11 +25,10 @@ const AddForm = ({ handleAdd, handleTitle, handleAuthor }) => (
           onChange={handleAuthor}
         />
       </label>
-      <br />
       <Button
         className="primary-button-big"
         onClick={handleAdd}
-        text="Add Book"
+        text="ADD BOOK"
       />
     </form>
   </section>
