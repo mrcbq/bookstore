@@ -1,6 +1,7 @@
 import { PropTypes } from 'prop-types';
 
 import Button from './Button';
+import './Book.css';
 
 export default function Book({
   gender,
@@ -21,30 +22,34 @@ export default function Book({
           <button type="button" className="action">
             Comments
           </button>
-          <div className="vertical-separator">|</div>
-          <Button onClick={() => handleDelete(id)} text="Remove" />
-          <div className="vertical-separator">|</div>
+          <div className="vertical-separator" />
+          <Button
+            className="action"
+            onClick={() => handleDelete(id)}
+            text="Remove"
+          />
+          <div className="vertical-separator" />
           <button className="action" type="button">
             Edit
           </button>
         </div>
       </div>
-      <div>
-        <div>
-          <div className="img-progress" />
-          <div>
-            <div>
-              {progress}
-              %
-            </div>
-            <p>Completed</p>
-          </div>
+      <div className="progress-container">
+        <div className="circular-progress-container">
+          <div className="circular-progress" />
         </div>
-        <div className="vertical-separator">|</div>
         <div>
-          <p>CURRENT CHAPTER</p>
-          <p>{currentChapter}</p>
-          <button type="button">UPDATE PROGRESS</button>
+          <div className="percent-complete">
+            {progress}
+            %
+          </div>
+          <p className="completed">Completed</p>
+        </div>
+        <div className="progress-divider" />
+        <div className="current-chapter-container">
+          <p className="current-chapter-label">CURRENT CHAPTER</p>
+          <p className="current-chapter">{currentChapter}</p>
+          <button className="primary-button" type="button">UPDATE PROGRESS</button>
         </div>
       </div>
     </div>
@@ -57,7 +62,7 @@ Book.propTypes = {
   author: PropTypes.string,
   progress: PropTypes.string,
   handleDelete: PropTypes.func,
-  currentChapter: PropTypes.number,
+  currentChapter: PropTypes.string,
   id: PropTypes.string,
 };
 
@@ -65,8 +70,8 @@ Book.defaultProps = {
   gender: '',
   title: '',
   author: '',
-  progress: '',
+  progress: '50',
   handleDelete: () => {},
-  currentChapter: 1,
+  currentChapter: 'Chapter 17',
   id: 1,
 };

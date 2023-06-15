@@ -51,9 +51,10 @@ function BookList() {
           <Book
             key={book.item_id}
             id={book.item_id}
+            gender={book.category}
             title={book.title}
             author={book.author}
-            progress={book.category}
+            // progress={book.progress}
             handleDelete={handleDelete}
           />
         ))}
