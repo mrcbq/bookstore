@@ -27,14 +27,8 @@
 
 .author {
   font-family: 'RobotoSlab', serif;
-  height: 1.188rem;
   margin: 0.25rem 0 0;
   font-size: 0.875rem;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #4386bf;
 }
 
@@ -54,7 +48,6 @@
 
 .action {
   height: 1.188rem;
-  margin: 0.188rem 0.938rem 0.125rem 0;
   font-family: 'RobotoSlab', serif;
   font-size: 0.875rem;
   font-weight: 300;
@@ -65,9 +58,9 @@
 }
 
 .vertical-separator {
-  width: 0.125rem;
   height: 1.5rem;
   border: solid 1px var(--white-three);
+  margin: 0 0.2rem;
 }
 
 .progress-section {
@@ -99,14 +92,14 @@
   transform: rotate(45deg);
 }
 
-.completed,
 .percent-complete {
   font-family: 'Montserrat', sans-serif;
   color: #121212;
+  font-size: 2rem;
 }
 
-.percent-complete {
-  font-size: 2rem;
+.completed {
+  color: #bababa;
 }
 
 .progress-divider {
@@ -119,21 +112,23 @@
 .current-chapter-container {
   display: flex;
   flex-direction: column;
-  grid-gap: 20px;
-  gap: 20px;
+  grid-gap: 0.8rem;
 }
 
 .current-chapter,
 .current-chapter-label {
   font-family: 'RobotoSlab', serif;
   font-weight: 300;
-  color: #121212;
+}
+
+.current-chapter-label {
+  color: #bababa;
 }
 
 .current-chapter {
-  margin-top: 0.438rem;
-  font-size: 1rem;
   letter-spacing: -0.4px;
+  color: #121212;
+  margin-bottom: 0.8rem;
 }
 
 .primary-button {
