@@ -1,45 +1,37 @@
 #navbarContainer {
   display: flex;
-  width: 87.5rem;
-  height: 5.938rem;
-  margin: 0 0 2.375rem;
-  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
-  background-color: var(--white-two);
-  padding: 24px 4%;
-  border-bottom: 1px solid #e8e8e8;
-  display: flex;
+  flex-direction: row;
   align-items: center;
-  grid-gap: 40px;
-  gap: 40px;
-}
-
-a {
-  border-radius: 4px;
-  box-shadow: 0 0 60px 0 var(--black-5);
+  justify-content: space-between;
+  margin: 0;
+  padding: 1.81rem 6.25rem;
   background-color: var(--white);
+  border-bottom: 1px solid #e8e8e8;
 }
 
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 ul {
   list-style: none;
   display: flex;
   flex-direction: row;
-  /* gap: 3rem; */
+  gap: 3rem;
+}
+
+a {
+  font-family: "Montserrat",sans-serif;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  opacity: .5;
+  color: #121212;
+  text-decoration: none;
 }
 
 .active {
-  width: 3.688rem;
-  height: 1rem;
-  margin: 1.125rem 2.563rem 0.688rem 0;
-  font-family: Montserrat;
-  font-size: 0.813rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 1.9px;
-  color: #121212;
-  /* color: rgb(59, 51, 51);
-   */
+  opacity: 1;
 }
 .Bookstore-CMS {
   width: 15rem;
@@ -54,4 +46,14 @@ ul {
   letter-spacing: normal;
   color: var(--azure);
 }
-
+.icon-button {
+  cursor: pointer;
+  width: 2.813rem;
+  height: 2.813rem;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+}
+.primary-color {
+  color: #0290ff;
+}
