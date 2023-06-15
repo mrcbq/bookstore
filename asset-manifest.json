@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bookstore/static/css/main.bc8d4a2d.css",
-    "main.js": "/bookstore/static/js/main.b67015f0.js",
+    "main.css": "/bookstore/static/css/main.aeb13831.css",
+    "main.js": "/bookstore/static/js/main.dabc7e6b.js",
     "static/media/material-icons-two-tone.woff": "/bookstore/static/media/material-icons-two-tone.3baa5b8f3469222b822d.woff",
     "static/media/material-icons-two-tone.woff2": "/bookstore/static/media/material-icons-two-tone.4ef4218c522f1eb6b5b1.woff2",
     "static/media/material-icons-round.woff": "/bookstore/static/media/material-icons-round.5d681e2edae8c60630db.woff",
@@ -13,11 +13,11 @@
     "static/media/material-icons-sharp.woff2": "/bookstore/static/media/material-icons-sharp.219aa9140e099e6c72ed.woff2",
     "static/media/material-icons.woff2": "/bookstore/static/media/material-icons.0c35d18bf06992036b69.woff2",
     "index.html": "/bookstore/index.html",
-    "main.bc8d4a2d.css.map": "/bookstore/static/css/main.bc8d4a2d.css.map",
-    "main.b67015f0.js.map": "/bookstore/static/js/main.b67015f0.js.map"
+    "main.aeb13831.css.map": "/bookstore/static/css/main.aeb13831.css.map",
+    "main.dabc7e6b.js.map": "/bookstore/static/js/main.dabc7e6b.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc8d4a2d.css",
-    "static/js/main.b67015f0.js"
+    "static/css/main.aeb13831.css",
+    "static/js/main.dabc7e6b.js"
   ]
 }
